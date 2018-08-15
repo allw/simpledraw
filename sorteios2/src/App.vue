@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <h1>Sorteio das mulheres</h1>
+    <h1>Sorteio Dia da Mulher</h1>
     <h2>Números sorteados</h2>
     <div class="active">Último número sorteado: <span class="activeNumber">{{active}}</span></div>
     <button type="button" class="btn btn-primary" v-on:click="draw">Sorteio</button>
