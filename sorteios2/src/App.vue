@@ -3,9 +3,9 @@
     <img src="./assets/logo.png">
     <h1>Sorteio Dia da Mulher</h1>
     <h2>Números sorteados</h2>
-    <div class="active">Último número sorteado: <span class="activeNumber">{{active}}</span></div>
+    <div class="active" v-show="active !== ''">Último número sorteado: <span class="activeNumber">{{active}}</span></div>
     <button type="button" class="btn btn-primary" v-on:click="draw">Sorteio</button>
-    <div class="drawnArea">
+    <div class="drawnArea" v-show="drawnNumbers.length">
       <div>Números já sorteados:</div>
       <ul>
         <li class="drawn" v-for="number in drawnNumbers">
@@ -86,6 +86,6 @@ a {
 .activeNumber {
   position: absolute;
   font-size: 360px;
-  float: right;
+  top: -30px;
 }
 </style>
