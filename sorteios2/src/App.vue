@@ -4,8 +4,7 @@
     <h1>Sorteio Dia da Mulher</h1>
     <h2>Números sorteados</h2>
     <div class="active" v-show="active !== ''">Último número sorteado: <span class="activeNumber">{{active}}</span></div>
-    <button type="button" class="btn" v-on:click="generate">Gerar números</button>
-    <button type="button" class="btn btn-primary" v-show="numbers.length" v-on:click="draw">Sorteio</button>
+    <button type="button" class="btn btn-primary" v-on:click="draw">Sorteio</button>
     <div class="drawnArea" v-show="drawnNumbers.length">
       <div>Números já sorteados:</div>
       <ul>
@@ -23,20 +22,19 @@ export default {
   data () {
     return {
       active: '',
-      drawnNumbers: [],
-      numbers: [],
-      drawn: 0
+      drawnNumbers: []
     }  
   },
   methods: {
     draw: function() {
-      this.active = this.numbers[this.drawn];
+      var min = 1;
+      var quantity = 50;
+      var number = 0;
+      do {
+		number = Math.floor(Math.random() * (quantity - min + 1) ) + min;
+      } while (this.drawnNumbers.indexOf(number) !== -1);
+      this.active = number;
       this.drawnNumbers.splice(0, 0, this.active);
-      this.drawn++;
-    },
-    generate: function() {
-      random.test();
-      this.numbers = random.generate(15);
     }
   }
 }
@@ -91,6 +89,6 @@ a {
 .activeNumber {
   position: absolute;
   font-size: 360px;
-  top: -30px;
+  top: -50px;
 }
 </style>
