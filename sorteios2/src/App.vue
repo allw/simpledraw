@@ -71,12 +71,12 @@ a {
 
 .drawnArea {
   position: absolute;
-  top: 65%;
+  top: 55%;
 }
 
 .drawn {
   font-size: 72px;
-  padding: 10px;
+  padding-left: 10px;
 }
 
 .active {
@@ -89,6 +89,6 @@ a {
 .activeNumber {
   position: absolute;
   font-size: 360px;
-  top: -50px;
+  top: -70px;
 }
 </style>
